@@ -1,0 +1,12 @@
+.cert-img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+    margin-bottom:10px;
+    transition:0.3s;
+}
+
+.cert-img:hover{
+    transform:scale(1.05);
+}
