@@ -10,3 +10,66 @@
 .cert-img:hover{
     transform:scale(1.05);
 }
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 8%;
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Orbitron';
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+    gap:25px;
+}
+
+.nav-links li a{
+    text-decoration:none;
+    color:var(--text);
+    transition:0.3s;
+}
+
+.nav-links li a:hover{
+    color:var(--accent);
+}
+
+.hamburger{
+    display:none;
+    font-size:25px;
+    cursor:pointer;
+    color:var(--accent);
+}
+
+/* Mobile Responsive */
+@media(max-width:768px){
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:var(--bg);
+        flex-direction:column;
+        width:200px;
+        padding:20px;
+        display:none;
+        border-left:2px solid var(--accent);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+
+    .hamburger{
+        display:block;
+    }
+}

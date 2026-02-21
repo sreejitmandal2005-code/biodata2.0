@@ -46,3 +46,8 @@ app.post("/contact", (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
+
+
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
