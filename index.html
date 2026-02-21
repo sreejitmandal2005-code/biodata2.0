@@ -197,25 +197,23 @@ cursor:pointer;
 </div>
 
 </div>
-</section>
-
 <section id="certificates">
-<h2 class="section-title">Certificates</h2>
+  <h2 class="section-title">Certificates</h2>
 
-<div class="grid">
+  <div class="grid">
+    <div class="card">
+      <img src="c1.jpeg" height="350" width="300" class="cert-img" onclick="openModal(this.src)">
+      <p>Certificate of C++ </p>
+    </div>
 
-<div class="card">
-<img src="c1.jpeg" alt="Certificate 1" class="cert-img" width="200" height="280">
-<p>Full Stack Web Development Certification</p>
-</div>
-
-<div class="card">
-<img src="c2.jpeg" alt="Certificate 2" class="cert-img" width="200" height="280" >
-<p>Hackathon Participation Certificate</p>
-</div>
-
-</div>
+    <div class="card">
+      <img src="c2.jpeg" height="350" width="300" class="cert-img" onclick="openModal(this.src)">
+      <p>photography Certificate on 19/08/2025 </p>
+    </div>
+  </div>
 </section>
+
+
 
 
 <section id="achievements">
@@ -306,7 +304,23 @@ if(p.y>canvas.height)p.y=0;
 requestAnimationFrame(draw);
 }
 draw();
+
+function openModal(src){
+    document.getElementById("imageModal").style.display="flex";
+    document.getElementById("modalImg").src=src;
+}
+
+function closeModal(){
+    document.getElementById("imageModal").style.display="none";
+}
+
 </script>
+
+ <!-- Certificate Fullscreen Modal -->
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal()">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
 
 </body>
 </html>

@@ -51,3 +51,13 @@ app.listen(PORT, () => {
 function toggleMenu(){
     document.getElementById("navLinks").classList.toggle("active");
 }
+
+
+function openModal(src){
+    document.getElementById("imageModal").style.display="flex";
+    document.getElementById("modalImg").src=src;
+}
+
+function closeModal(){
+    document.getElementById("imageModal").style.display="none";
+}
