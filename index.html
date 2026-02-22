@@ -163,17 +163,12 @@ cursor:pointer;
 
 <canvas id="particles"></canvas>
 
-<nav>
-    <h1>Sreejit.07</h1>
+<nav class="navbar">
+    <h1 class="logo">Sreejit.07</h1>
 
-    <!-- 3 DOT BUTTON -->
-    <div class="menu-btn" onclick="toggleMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
+    <div class="menu-btn" onclick="toggleMenu()">⋮</div>
 
-    <ul id="navLinks">
+    <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#certificates">Certificates</a></li>
         <li><a href="#achievements">Achievements</a></li>
@@ -182,6 +177,7 @@ cursor:pointer;
         <li><span class="toggle" onclick="toggleMode()">🌙 Mode</span></li>
     </ul>
 </nav>
+
 
 
 <section class="hero">
@@ -308,13 +304,11 @@ cursor:pointer;
 
 <script>
 // DARK MODE
-function toggleMode(){
-document.body.classList.toggle("light");
-}
-
 function toggleMenu(){
     document.getElementById("navLinks").classList.toggle("active");
 }
+
+
 
 
 // TYPING EFFECT
