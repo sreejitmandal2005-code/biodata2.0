@@ -73,6 +73,8 @@ padding:5px 12px;
 border-radius:20px;
 }
 
+
+
 /* HERO */
 .hero{
 height:100vh;
@@ -162,16 +164,25 @@ cursor:pointer;
 <canvas id="particles"></canvas>
 
 <nav>
-<h1>Sreejit.07</h1>
-<ul>
-<li><a href="#about">About</a></li>
-<li><a href="#certificates">Certificates</a></li>
-<li><a href="#achievements">Achievements</a></li>
-<li><a href="#hobbies">Hobbies</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-<div class="toggle" onclick="toggleMode()">🌙 Mode</div>
+    <h1>Sreejit.07</h1>
+
+    <!-- 3 DOT BUTTON -->
+    <div class="menu-btn" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <ul id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#certificates">Certificates</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><span class="toggle" onclick="toggleMode()">🌙 Mode</span></li>
+    </ul>
 </nav>
+
 
 <section class="hero">
 <img src="01.jpeg" alt="Profile">
@@ -300,6 +311,11 @@ cursor:pointer;
 function toggleMode(){
 document.body.classList.toggle("light");
 }
+
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
 
 // TYPING EFFECT
 const text=["PHOTOGRAPHY", "VIDEOGRAPHY", "VIDEO-EDITOR" , "PHOTO-EDITOR", "PROGRAMMER"];

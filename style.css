@@ -111,3 +111,43 @@
         padding: 70px 30px;
     }
 }
+
+/* 3 DOT MENU BUTTON */
+.menu-btn{
+    display:none;
+    flex-direction:column;
+    cursor:pointer;
+    gap:5px;
+}
+
+.menu-btn span{
+    width:25px;
+    height:3px;
+    background:var(--accent);
+    border-radius:3px;
+}
+
+/* Mobile Menu */
+@media(max-width:768px){
+
+    nav ul{
+        position:absolute;
+        top:70px;
+        right:0;
+        background:var(--bg);
+        flex-direction:column;
+        width:220px;
+        padding:20px;
+        display:none;
+        border-left:2px solid var(--accent);
+        box-shadow:0 0 15px var(--accent);
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:flex;
+    }
+}
