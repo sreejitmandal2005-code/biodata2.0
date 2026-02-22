@@ -163,15 +163,21 @@ cursor:pointer;
 
 <nav>
 <h1>Sreejit.0708</h1>
-<ul>
+
+<div class="hamburger" onclick="toggleMenu()">
+    ☰
+</div>
+
+<ul id="navLinks">
 <li><a href="#about">About</a></li>
 <li><a href="#certificates">Certificates</a></li>
 <li><a href="#achievements">Achievements</a></li>
 <li><a href="#hobbies">Hobbies</a></li>
 <li><a href="#contact">Contact</a></li>
+<li><span class="toggle" onclick="toggleMode()">🌙 Mode</span></li>
 </ul>
-<div class="toggle" onclick="toggleMode()">🌙 Mode</div>
 </nav>
+
 
 <section class="hero">
 <img src="01.jpeg" alt="Profile">
@@ -337,6 +343,11 @@ if(p.y>canvas.height)p.y=0;
 requestAnimationFrame(draw);
 }
 draw();
+// HAMBURGER MENU
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
+
 </script>
 
 </body>
