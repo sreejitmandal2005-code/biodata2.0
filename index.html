@@ -162,22 +162,16 @@ cursor:pointer;
 <canvas id="particles"></canvas>
 
 <nav>
-<h1>Sreejit.0708</h1>
-
-<div class="hamburger" onclick="toggleMenu()">
-    ☰
-</div>
-
-<ul id="navLinks">
+<h1>Sreejit.07</h1>
+<ul>
 <li><a href="#about">About</a></li>
 <li><a href="#certificates">Certificates</a></li>
 <li><a href="#achievements">Achievements</a></li>
 <li><a href="#hobbies">Hobbies</a></li>
 <li><a href="#contact">Contact</a></li>
-<li><span class="toggle" onclick="toggleMode()">🌙 Mode</span></li>
 </ul>
+<div class="toggle" onclick="toggleMode()">🌙 Mode</div>
 </nav>
-
 
 <section class="hero">
 <img src="01.jpeg" alt="Profile">
@@ -294,7 +288,7 @@ cursor:pointer;
 <input type="email" name="email" placeholder="Your Email" required>
 <textarea name="message" placeholder="Your Message" required></textarea>
 
-
+<input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_next" value="https://sreejitmandal2005.github.io/biodata2.0/">
 
 <button type="submit">Send Message</button>
@@ -343,11 +337,6 @@ if(p.y>canvas.height)p.y=0;
 requestAnimationFrame(draw);
 }
 draw();
-// HAMBURGER MENU
-function toggleMenu(){
-document.getElementById("navLinks").classList.toggle("active");
-}
-
 </script>
 
 </body>
