@@ -143,3 +143,65 @@
         display:block;
     }
 }
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.7);
+    backdrop-filter:blur(10px);
+    z-index:1000;
+}
+
+.logo{
+    font-family:'Orbitron';
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links li a{
+    text-decoration:none;
+    color:var(--text);
+}
+
+/* Hide 3-dot by default */
+.menu-btn{
+    display:none;
+    font-size:26px;
+    color:var(--accent);
+    cursor:pointer;
+}
+
+/* MOBILE ONLY */
+@media(max-width:768px){
+
+    .menu-btn{
+        display:block;   /* Show 3-dot */
+    }
+
+    .nav-links{
+        position:absolute;
+        top:70px;
+        right:0;
+        flex-direction:column;
+        background:var(--bg);
+        width:220px;
+        padding:20px;
+        display:none;
+        border-left:2px solid var(--accent);
+        box-shadow:0 0 15px var(--accent);
+    }
+
+    .nav-links.active{
+        display:flex;
+    }
+}
