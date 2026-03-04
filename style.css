@@ -1,207 +1,327 @@
+/* ================= ROOT VARIABLES ================= */
+:root{
+--bg:#0f0f0f;
+--bg-soft:#161616;
+--text:#ffffff;
+--accent:#00ffcc;
+
+--glass-bg:rgba(255,255,255,0.06);
+--glass-border:rgba(255,255,255,0.18);
+
+--neu-light:rgba(255,255,255,0.05);
+--neu-dark:rgba(0,0,0,0.6);
+}
+
+/* ================= GLOBAL ================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:linear-gradient(135deg,#0f0f0f,#1c1c1c);
+color:var(--text);
+overflow-x:hidden;
+}
+
+/* PARTICLE CANVAS */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* ================= NAVBAR ================= */
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 8%;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+
+background:var(--glass-bg);
+backdrop-filter:blur(12px);
+border-bottom:1px solid var(--glass-border);
+}
+
+.logo{
+font-family:'Orbitron';
+color:var(--accent);
+font-size:20px;
+letter-spacing:2px;
+}
+
+/* NAV LINKS */
+.nav-links{
+display:flex;
+gap:30px;
+list-style:none;
+}
+
+.nav-links li a{
+text-decoration:none;
+color:var(--text);
+font-weight:500;
+transition:0.3s;
+position:relative;
+}
+
+.nav-links li a::after{
+content:"";
+position:absolute;
+bottom:-6px;
+left:0;
+width:0%;
+height:2px;
+background:var(--accent);
+transition:0.3s;
+}
+
+.nav-links li a:hover::after{
+width:100%;
+}
+
+.nav-links li a:hover{
+color:var(--accent);
+}
+
+/* MENU BUTTON */
+.menu-btn{
+display:none;
+font-size:26px;
+color:var(--accent);
+cursor:pointer;
+}
+
+/* ================= HERO ================= */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+}
+
+.hero img{
+width:180px;
+height:180px;
+border-radius:50%;
+border:3px solid var(--accent);
+box-shadow:
+8px 8px 20px var(--neu-dark),
+-8px -8px 20px var(--neu-light);
+margin-bottom:20px;
+}
+
+.hero h2{
+font-family:'Orbitron';
+font-size:28px;
+}
+
+#typing{
+margin-top:10px;
+color:var(--accent);
+font-family:'Orbitron';
+}
+
+/* ================= SECTIONS ================= */
+section{
+padding:100px 8%;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:50px;
+color:var(--accent);
+font-family:'Orbitron';
+font-size:24px;
+letter-spacing:2px;
+}
+
+/* ================= GRID ================= */
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+/* ================= GLASS + NEUMORPHISM CARD ================= */
+.card{
+background:var(--bg-soft);
+border-radius:20px;
+padding:25px;
+transition:0.4s ease;
+
+box-shadow:
+8px 8px 20px var(--neu-dark),
+-8px -8px 20px var(--neu-light);
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:
+0 0 20px var(--accent),
+8px 8px 25px var(--neu-dark),
+-8px -8px 25px var(--neu-light);
+}
+
+/* ================= CERTIFICATE IMAGE ================= */
 .cert-img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-    border-radius:10px;
-    margin-bottom:10px;
-    transition:0.3s;
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+transition:0.4s ease;
+
+box-shadow:
+6px 6px 15px var(--neu-dark),
+-6px -6px 15px var(--neu-light);
 }
 
 .cert-img:hover{
-    transform:scale(1.05);
-}
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:15px 8%;
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(10px);
-    z-index:1000;
+transform:scale(1.05);
 }
 
-.logo{
-    font-family:'Orbitron';
-    color:var(--accent);
+/* ================= CONTACT ================= */
+.contact a{
+display:block;
+margin:10px 0;
+color:var(--accent);
+text-decoration:none;
+transition:0.3s;
 }
 
-.nav-links{
-    display:flex;
-    list-style:none;
-    gap:25px;
+.contact a:hover{
+letter-spacing:1px;
 }
 
-.nav-links li a{
-    text-decoration:none;
-    color:var(--text);
-    transition:0.3s;
+/* ================= FORM (NEUMORPHISM STYLE) ================= */
+form{
+margin-top:20px;
+background:var(--bg-soft);
+padding:30px;
+border-radius:20px;
+
+box-shadow:
+8px 8px 20px var(--neu-dark),
+-8px -8px 20px var(--neu-light);
 }
 
-.nav-links li a:hover{
-    color:var(--accent);
+form input,
+form textarea{
+width:100%;
+padding:12px;
+margin:12px 0;
+border-radius:10px;
+border:none;
+background:var(--bg);
+color:white;
+outline:none;
+
+box-shadow:
+inset 4px 4px 8px var(--neu-dark),
+inset -4px -4px 8px var(--neu-light);
 }
 
-.hamburger{
-    display:none;
-    font-size:25px;
-    cursor:pointer;
-    color:var(--accent);
+form input:focus,
+form textarea:focus{
+box-shadow:
+0 0 10px var(--accent);
 }
 
-/* Mobile Responsive */
+/* BUTTON */
+button{
+padding:12px 25px;
+background:var(--bg-soft);
+border:none;
+border-radius:25px;
+cursor:pointer;
+font-weight:600;
+color:var(--accent);
+
+box-shadow:
+6px 6px 15px var(--neu-dark),
+-6px -6px 15px var(--neu-light);
+transition:0.3s;
+}
+
+button:hover{
+transform:translateY(-3px);
+box-shadow:
+0 0 15px var(--accent);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:992px){
+
+section{
+padding:80px 6%;
+}
+
+.grid{
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+}
+
+}
+
 @media(max-width:768px){
-    .nav-links{
-        position:absolute;
-        top:70px;
-        right:0;
-        background:var(--bg);
-        flex-direction:column;
-        width:200px;
-        padding:20px;
-        display:none;
-        border-left:2px solid var(--accent);
-    }
 
-    .nav-links.active{
-        display:flex;
-    }
-
-    .hamburger{
-        display:block;
-    }
-}
-
-
-
-/* NAVBAR */
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-}
-
-.logo{
-    font-family:'Orbitron';
-    color:var(--accent);
-}
-
-.nav-links{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-.nav-links li a{
-    text-decoration:none;
-    color:var(--text);
-    transition:0.3s;
-}
-
-.nav-links li a:hover{
-    color:var(--accent);
-}
-
-/* 3 DOT BUTTON */
 .menu-btn{
-    display:none;
-    font-size:28px;
-    color:var(--accent);
-    cursor:pointer;
+display:block;
 }
 
-/* MOBILE */
-@media(max-width:768px){
-
-    .nav-links{
-        position:absolute;
-        top:70px;
-        right:0;
-        flex-direction:column;
-        background:var(--bg);
-        width:220px;
-        padding:20px;
-        display:none;
-        border-left:2px solid var(--accent);
-        box-shadow:0 0 15px var(--accent);
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .menu-btn{
-        display:block;
-    }
-}
-/* NAVBAR */
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 8%;
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(0,0,0,0.7);
-    backdrop-filter:blur(10px);
-    z-index:1000;
-}
-
-.logo{
-    font-family:'Orbitron';
-    color:var(--accent);
-}
-
+/* NORMAL MOBILE MENU (NO GLASS FOR BETTER UX) */
 .nav-links{
-    display:flex;
-    gap:25px;
-    list-style:none;
+position:absolute;
+top:70px;
+right:20px;
+flex-direction:column;
+gap:20px;
+background:#121212;   /* solid background */
+padding:25px;
+width:220px;
+border-radius:12px;
+display:none;
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 }
 
-.nav-links li a{
-    text-decoration:none;
-    color:var(--text);
+.nav-links.active{
+display:flex;
 }
 
-/* Hide 3-dot by default */
-.menu-btn{
-    display:none;
-    font-size:26px;
-    color:var(--accent);
-    cursor:pointer;
+.hero img{
+width:150px;
+height:150px;
 }
 
-/* MOBILE ONLY */
-@media(max-width:768px){
+}
 
-    .menu-btn{
-        display:block;   /* Show 3-dot */
-    }
+@media(max-width:480px){
 
-    .nav-links{
-        position:absolute;
-        top:70px;
-        right:0;
-        flex-direction:column;
-        background:var(--bg);
-        width:220px;
-        padding:20px;
-        display:none;
-        border-left:2px solid var(--accent);
-        box-shadow:0 0 15px var(--accent);
-    }
+.hero h2{
+font-size:20px;
+}
 
-    .nav-links.active{
-        display:flex;
-    }
+.section-title{
+font-size:20px;
+}
+
+.card{
+padding:20px;
+}
+
+.cert-img{
+height:180px;
+}
+
 }

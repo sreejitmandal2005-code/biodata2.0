@@ -7,157 +7,8 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-:root{
---bg:#0f0f0f;
---text:#fff;
---accent:#00ffcc;
-}
-
-body.light{
---bg:#f4f4f4;
---text:#111;
---accent:#0077ff;
-}
-
-body{
-margin:0;
-font-family:'Poppins',sans-serif;
-background:var(--bg);
-color:var(--text);
-transition:0.4s;
-overflow-x:hidden;
-}
-
-/* PARTICLES BACKGROUND */
-canvas{
-position:fixed;
-top:0;
-left:0;
-z-index:-1;
-}
-
-/* NAV */
-nav{
-display:flex;
-justify-content:space-between;
-padding:20px 8%;
-position:fixed;
-width:100%;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(10px);
-z-index:1000;
-}
-
-nav h1{
-font-family:'Orbitron';
-color:var(--accent);
-}
-
-nav ul{
-display:flex;
-gap:20px;
-list-style:none;
-}
-
-nav ul li a{
-text-decoration:none;
-color:var(--text);
-}
-
-.toggle{
-cursor:pointer;
-color:var(--accent);
-border:1px solid var(--accent);
-padding:5px 12px;
-border-radius:20px;
-}
-
-
-
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
-
-.hero img{
-width:180px;
-height:180px;
-border-radius:50%;
-border:4px solid var(--accent);
-box-shadow:0 0 20px var(--accent);
-}
-
-.hero h2{
-font-family:'Orbitron';
-}
-
-#typing{
-color:var(--accent);
-margin-top:10px;
-font-family:'Orbitron';
-}
-
-/* SECTION */
-section{
-padding:100px 8%;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:40px;
-color:var(--accent);
-font-family:'Orbitron';
-}
-
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.card{
-border:1px solid var(--accent);
-padding:20px;
-border-radius:15px;
-transition:0.3s;
-}
-
-.card:hover{
-box-shadow:0 0 20px var(--accent);
-transform:translateY(-8px);
-}
-
-/* CONTACT */
-.contact a{
-display:block;
-margin:10px 0;
-color:var(--accent);
-text-decoration:none;
-}
-
-form input, form textarea{
-width:100%;
-padding:10px;
-margin:10px 0;
-border:none;
-border-radius:8px;
-}
-
-button{
-padding:10px 20px;
-background:var(--accent);
-border:none;
-border-radius:20px;
-cursor:pointer;
-}
-</style>
+<!-- LINK CSS FILE -->
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -178,9 +29,6 @@ cursor:pointer;
     </ul>
 </nav>
 
-
-
-
 <section class="hero">
 <img src="01.jpeg" alt="Profile">
 <h2>Sreejit Mandal</h2>
@@ -189,7 +37,6 @@ cursor:pointer;
 
 <section id="about">
 <h2 class="section-title">About Me</h2>
-<div class="card">
 <div class="card">
     <p>
         Hi, I’m <strong>Sreejit Mandal</strong>, a First-Year BCA student at Don Bosco College, Panaji, Goa. 
@@ -203,125 +50,112 @@ cursor:pointer;
         My goal is to grow as a full-stack developer while building projects that are innovative, user-friendly, and meaningful.
     </p>
 </div>
-
-</div>
 </section>
 
 <section id="certificates">
 <h2 class="section-title">Certificates</h2>
-
 <div class="grid">
 
 <div class="card">
-<img src="c1.jpeg" alt="Certificate 1" class="cert-img" width="250" height="350">
-<p>Certificate og C++ </p>
+<img src="c1.jpeg" class="cert-img">
+<p>Certificate of C++</p>
 </div>
 
 <div class="card">
-<img src="c5.jpeg" alt="Certificate 2" class="cert-img"  width="250" height="350">
-<p>Short term Certificate cource on Introdution to Telly </p>
+<img src="c5.jpeg" class="cert-img">
+<p>Introduction to Tally</p>
 </div>
 
 <div class="card">
-<img src="c3.jpeg" alt="Certificate 2" class="cert-img" width="250" height="150" >
-<p>Short term Certificate cource on Financial fundamental  </p>
+<img src="c3.jpeg" class="cert-img">
+<p>Financial Fundamentals</p>
 </div>
 
 <div class="card">
-<img src="c4.jpeg" alt="Certificate 2" class="cert-img" width="250" height="150" >
-<p>Short term Certificate cource on Introdution to Telly </p>
+<img src="c4.jpeg" class="cert-img">
+<p>Introduction to Tally</p>
 </div>
 
 <div class="card">
-<img src="c6.jpeg" alt="Certificate 2" class="cert-img" width="250" height="150" >
-<p>Attended one day state levale AI workshop  </p>
+<img src="c6.jpeg" class="cert-img">
+<p>AI Workshop</p>
 </div>
 
 <div class="card">
-<img src="c2.jpeg" alt="Certificate 2" class="cert-img" width="250" height="150" >
-<p>Photography Certificate 19/08/2025 </p>
+<img src="c2.jpeg" class="cert-img">
+<p>Photography Certificate</p>
 </div>
 
 <div class="card">
-<img src="c7.jpeg" alt="Certificate 2" class="cert-img" width="250" height="150" >
-<p> ALL OVER GOA PGOTOGRAPHY COMPETITION (GOT JURRY PRIZE )</p>
+<img src="c7.jpeg" class="cert-img">
+<p>Goa Photography Competition</p>
 </div>
 
 <div class="card">
-<img src="c8.jpeg" alt="Certificate 2" class="cert-img" width="250" height="150" >
-<p> GOT 3RD PLACE IN BOOK COVER DESIGN COMPETITION</p>
+<img src="c8.jpeg" class="cert-img">
+<p>Book Cover Design Competition</p>
 </div>
 
 </div>
 </section>
-
 
 <section id="achievements">
 <h2 class="section-title">Achievements</h2>
 <div class="grid">
-<div class="card">🎯 INTER CLASS PHOTOGRAPHY COMPITITION GOT MOST CRIATIVE PHOTO </div>
-<div class="card">🏆 ACHIEVED C++ Certificate </div>
-<div class="card">🎯 DID DIPLOMA IN IT (INFOMATION TECHNOLOGY)</div>
-<div class="card">🏆 DID SHORT TREAM COURSE IN "INTRODUCTION TO TALLY PRIME"</div>
-<div class="card">🎯 DID SHORT TREAM COURSE IN "FINANCIAL FUNDAMENTALS" </div>
-<div class="card">🏆 GOT 3RD PLACE IN BOOK COVER DESIGN COMPETITION</div>
+<div class="card">🎯 Inter Class Photography Competition</div>
+<div class="card">🏆 C++ Certificate</div>
+<div class="card">🎯 Diploma in IT</div>
+<div class="card">🏆 Tally Prime Course</div>
+<div class="card">🎯 Financial Fundamentals</div>
+<div class="card">🏆 3rd Place – Book Cover Design</div>
 </div>
 </section>
 
 <section id="hobbies">
-    <h2 class="section-title">Hobbies & Interests</h2>
-    <div class="grid">
-        <div class="card">💻 Coding C++</div>
-        <div class="card">🎮 Gaming</div>
-        <div class="card">📸 Photography</div>
-        <div class="card">🎥 Video Editing</div>
-        <div class="card">🎨 Photo Editing</div>
-        <div class="card">💻 Web Devolopment</div>
-        <div class="card">🎨 Drawing</div>
-        <div class="card">💻 videography</div>
-    </div>
+<h2 class="section-title">Hobbies & Interests</h2>
+<div class="grid">
+<div class="card">💻 Coding</div>
+<div class="card">🎮 Gaming</div>
+<div class="card">📸 Photography</div>
+<div class="card">🎥 Video Editing</div>
+<div class="card">🎨 Drawing</div>
+<div class="card">💻 Web Development</div>
+</div>
 </section>
 
 <section id="contact">
 <h2 class="section-title">Contact Me</h2>
+
 <div class="contact">
-<a href="https://wa.me/919168392740" target="_blank">📱 WhatsApp Me</a>
-<a href="https://www.instagram.com/_.sreejit._7?igsh=djVkMzBoYWlpaWxz" target="_blank">📸 Instagram</a>
-<a href="https://www.linkedin.com/in/sreeejit-mandal-691a623a9?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">💼 LinkedIn</a>
+<a href="https://wa.me/919168392740" target="_blank">📱 WhatsApp</a>
+<a href="https://www.instagram.com/_.sreejit._7" target="_blank">📸 Instagram</a>
+<a href="https://www.linkedin.com/in/sreeejit-mandal-691a623a9" target="_blank">💼 LinkedIn</a>
 </div>
 
 <form action="https://formsubmit.co/sreejitmandal2005@gmail.com" method="POST">
-
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Your Email" required>
 <textarea name="message" placeholder="Your Message" required></textarea>
-
 <input type="hidden" name="_captcha" value="false">
-<input type="hidden" name="_next" value="https://sreejitmandal2005.github.io/biodata2.0/">
-
 <button type="submit">Send Message</button>
 </form>
 </section>
 
 <script>
-// DARK MODE
+// MENU TOGGLE
 function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("active");
+document.getElementById("navLinks").classList.toggle("active");
 }
 
-
-
-
 // TYPING EFFECT
-const text=["PHOTOGRAPHY", "VIDEOGRAPHY", "VIDEO-EDITOR" , "PHOTO-EDITOR", "PROGRAMMER"];
+const text=["PHOTOGRAPHY","VIDEOGRAPHY","VIDEO-EDITOR","PHOTO-EDITOR","PROGRAMMER"];
 let i=0,j=0;
 function type(){
 if(i<text.length){
 document.getElementById("typing").innerHTML=text[i].slice(0,j++);
 if(j>text[i].length){i++;j=0;}
-setTimeout(type,250);
-}
-}
+setTimeout(type,200);
+}}
 type();
 
 // PARTICLES
