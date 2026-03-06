@@ -25,7 +25,7 @@
         <li><a href="#achievements">Achievements</a></li>
         <li><a href="#hobbies">Hobbies</a></li>
         <li><a href="#contact">Contact</a></li>
-        <button id="themeToggle">🌙</button>
+        <li><span class="toggle" onclick="toggleMode()">🌙 Mode</span></li>
     </ul>
 </nav>
 
@@ -52,49 +52,47 @@
 </div>
 </section>
 
-
-
 <section id="certificates">
 <h2 class="section-title">Certificates</h2>
 <div class="grid">
 
 <div class="card">
-<img src="c1.jpeg" class="cert-img">
+<img src="c1.jpeg" class="cert-img" onclick="openCert(this)">
 <p>Certificate of C++</p>
 </div>
 
 <div class="card">
-<img src="c5.jpeg" class="cert-img">
-<p>certificate of IT</p>
+<img src="c5.jpeg" class="cert-img" onclick="openCert(this)">
+<p>Introduction to Tally</p>
 </div>
 
 <div class="card">
-<img src="c3.jpeg" class="cert-img">
-<p> Introduction to Tally</p>
-</div>
-
-<div class="card">
-<img src="c4.jpeg" class="cert-img">
+<img src="c3.jpeg" class="cert-img" onclick="openCert(this)">
 <p>Financial Fundamentals</p>
 </div>
 
 <div class="card">
-<img src="c6.jpeg" class="cert-img">
+<img src="c4.jpeg"  class="cert-img" onclick="openCert(this)">
+<p>Introduction to Tally</p>
+</div>
+
+<div class="card">
+<img src="c6.jpeg"  class="cert-img" onclick="openCert(this)">
 <p>AI Workshop</p>
 </div>
 
 <div class="card">
-<img src="c2.jpeg" class="cert-img">
+<img src="c2.jpeg"  class="cert-img" onclick="openCert(this)">
 <p>Photography Certificate</p>
 </div>
 
 <div class="card">
-<img src="c7.jpeg" class="cert-img">
+<img src="c7.jpeg"  class="cert-img" onclick="openCert(this)">
 <p>Goa Photography Competition</p>
 </div>
 
 <div class="card">
-<img src="c8.jpeg" class="cert-img">
+<img src="c8.jpeg"  class="cert-img" onclick="openCert(this)">
 <p>Book Cover Design Competition</p>
 </div>
 
@@ -184,39 +182,12 @@ if(p.y>canvas.height)p.y=0;
 requestAnimationFrame(draw);
 }
 draw();
-
-<!-- IMAGE MODAL -->
-<div id="imgModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImg">
-</div>
-
-
-// CERTIFICATE FULL SCREEN VIEW
-const modal = document.getElementById("imgModal");
-const modalImg = document.getElementById("modalImg");
-const closeBtn = document.querySelector(".close");
-
-document.querySelectorAll(".cert-img").forEach(img=>{
-img.onclick=function(){
-modal.style.display="flex";
-modalImg.src=this.src;
-}
-});
-
-closeBtn.onclick=function(){
-modal.style.display="none";
-}
-
-// CLOSE WHEN CLICK OUTSIDE
-modal.onclick=function(e){
-if(e.target===modal){
-modal.style.display="none";
-}
-}
 </script>
 
-
+<!-- CERTIFICATE FULL SCREEN MODAL -->
+<div id="certModal" class="cert-modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImg">
 </div>
 </body>
 </html>
