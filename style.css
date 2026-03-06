@@ -325,3 +325,21 @@ height:180px;
 }
 
 }
+
+
+/* ================= LIGHT MODE ================= */
+body.light-mode{
+--bg:#f5f5f5;
+--bg-soft:#ffffff;
+--text:#111111;
+--accent:#00b894;
+
+--glass-bg:rgba(0,0,0,0.05);
+--glass-border:rgba(0,0,0,0.1);
+
+--neu-light:rgba(255,255,255,0.9);
+--neu-dark:rgba(0,0,0,0.15);
+
+background:linear-gradient(135deg,#f5f5f5,#e0e0e0);
+color:var(--text);
+}

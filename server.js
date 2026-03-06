@@ -50,14 +50,5 @@ app.listen(PORT, () => {
 function toggleMenu(){
     document.getElementById("navLinks").classList.toggle("active");
 }
-const toggleBtn = document.getElementById("themeToggle");
 
-toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("light-mode");
 
-    if(document.body.classList.contains("light-mode")){
-        toggleBtn.textContent = "☀️";
-    } else {
-        toggleBtn.textContent = "🌙";
-    }
-});
