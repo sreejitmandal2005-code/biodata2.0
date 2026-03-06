@@ -52,3 +52,25 @@ function toggleMenu(){
 }
 
 
+// CERTIFICATE FULL SCREEN VIEW
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".close");
+
+document.querySelectorAll(".cert-img").forEach(img=>{
+img.onclick=function(){
+modal.style.display="flex";
+modalImg.src=this.src;
+}
+});
+
+closeBtn.onclick=function(){
+modal.style.display="none";
+}
+
+// CLOSE WHEN CLICK OUTSIDE
+modal.onclick=function(e){
+if(e.target===modal){
+modal.style.display="none";
+}
+}
