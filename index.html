@@ -185,6 +185,13 @@ requestAnimationFrame(draw);
 }
 draw();
 
+<!-- IMAGE MODAL -->
+<div id="imgModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="modalImg">
+</div>
+
+
 // CERTIFICATE FULL SCREEN VIEW
 const modal = document.getElementById("imgModal");
 const modalImg = document.getElementById("modalImg");
@@ -209,10 +216,7 @@ modal.style.display="none";
 }
 </script>
 
-<!-- IMAGE MODAL -->
-<div id="imgModal" class="modal">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="modalImg">
+
 </div>
 </body>
 </html>
