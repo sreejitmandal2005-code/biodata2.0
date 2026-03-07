@@ -1,143 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Sreejit Mandal | Premium Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
+<!-- Background Particles -->
 <canvas id="particles"></canvas>
 
+<!-- NAVBAR -->
 <nav class="navbar">
+
 <h1 class="logo">Sreejit.07</h1>
 
-<div class="menu-btn" onclick="toggleMenu()">&#8942;</div>
+<div class="menu-btn" onclick="toggleMenu()">⋮</div>
 
 <ul class="nav-links" id="navLinks">
+
 <li><a href="#about">About</a></li>
 <li><a href="#certificates">Certificates</a></li>
 <li><a href="#achievements">Achievements</a></li>
 <li><a href="#hobbies">Hobbies</a></li>
 <li><a href="#contact">Contact</a></li>
-<li><button type="button" class="theme-toggle" id="themeToggle" onclick="toggleMode()">Light Mode</button></li>
+
+<li>
+<button type="button" class="theme-toggle" id="themeToggle" onclick="toggleMode()">
+Moon Mode
+</button>
+</li>
+
 </ul>
+
 </nav>
 
+<!-- HERO SECTION -->
 <section class="hero">
-<img src="01.jpeg" alt="Profile">
+
+<img src="01.jpeg" alt="Sreejit Mandal Profile Photo">
+
 <h2>Sreejit Mandal</h2>
+
 <div id="typing"></div>
+
 </section>
 
+<!-- ABOUT -->
 <section id="about">
+
 <h2 class="section-title">About Me</h2>
+
 <div class="card">
+
 <p>
-Hi, I’m <strong>Sreejit Mandal</strong>, a First-Year BCA student at Don Bosco College, Panaji, Goa.
+
+Hi, I’m <strong>Sreejit Mandal</strong>, a First-Year BCA student at Don Bosco College, Panaji, Goa.  
 I am passionate about technology, creativity, and digital innovation.
+
+<br><br>
+
+As a web developer, photographer, and editor, I enjoy blending technical skills with artistic vision to create impactful digital experiences.
+
+<br><br>
+
+I have a strong interest in modern web development and continuously work on improving my coding skills.
+
+<br><br>
+
+Alongside programming, photography and editing allow me to express creativity and capture stories through visuals.
+
+<br><br>
+
+My goal is to grow as a full-stack developer while building projects that are innovative, user-friendly, and meaningful.
+
 </p>
+
 </div>
+
 </section>
 
+<!-- CERTIFICATES -->
 <section id="certificates">
+
 <h2 class="section-title">Certificates</h2>
 
 <div class="grid">
 
 <div class="card">
-<img src="c1.jpeg" class="cert-img" onclick="openCert(this)">
+<img src="c1.jpeg" alt="C++ Certificate" class="cert-img" onclick="openCert(this)">
 <p>Certificate of C++</p>
 </div>
 
 <div class="card">
-<img src="c5.jpeg" class="cert-img" onclick="openCert(this)">
+<img src="c5.jpeg" alt="Tally Certificate" class="cert-img" onclick="openCert(this)">
 <p>Introduction to Tally</p>
 </div>
 
 <div class="card">
-<img src="c3.jpeg" class="cert-img" onclick="openCert(this)">
+<img src="c3.jpeg" alt="Financial Fundamentals Certificate" class="cert-img" onclick="openCert(this)">
 <p>Financial Fundamentals</p>
 </div>
 
 <div class="card">
-<img src="c4.jpeg" class="cert-img" onclick="openCert(this)">
-<p>Introduction to Tally</p>
+<img src="c4.jpeg" alt="Tally Prime Certificate" class="cert-img" onclick="openCert(this)">
+<p>Tally Prime</p>
 </div>
 
 <div class="card">
-<img src="c6.jpeg" class="cert-img" onclick="openCert(this)">
+<img src="c6.jpeg" alt="AI Workshop Certificate" class="cert-img" onclick="openCert(this)">
 <p>AI Workshop</p>
 </div>
 
 <div class="card">
-<img src="c2.jpeg" class="cert-img" onclick="openCert(this)">
+<img src="c2.jpeg" alt="Photography Certificate" class="cert-img" onclick="openCert(this)">
 <p>Photography Certificate</p>
 </div>
 
 <div class="card">
-<img src="c7.jpeg" class="cert-img" onclick="openCert(this)">
+<img src="c7.jpeg" alt="Goa Photography Competition" class="cert-img" onclick="openCert(this)">
 <p>Goa Photography Competition</p>
 </div>
 
 <div class="card">
-<img src="c8.jpeg" class="cert-img" onclick="openCert(this)">
+<img src="c8.jpeg" alt="Book Cover Design Competition" class="cert-img" onclick="openCert(this)">
 <p>Book Cover Design Competition</p>
 </div>
 
 </div>
+
 </section>
 
+<!-- ACHIEVEMENTS -->
 <section id="achievements">
+
 <h2 class="section-title">Achievements</h2>
+
 <div class="grid">
+
 <div class="card">🎯 Inter Class Photography Competition</div>
 <div class="card">🏆 C++ Certificate</div>
 <div class="card">🎯 Diploma in IT</div>
 <div class="card">🏆 Tally Prime Course</div>
 <div class="card">🎯 Financial Fundamentals</div>
 <div class="card">🏆 3rd Place – Book Cover Design</div>
+
 </div>
+
 </section>
 
+<!-- HOBBIES -->
 <section id="hobbies">
+
 <h2 class="section-title">Hobbies & Interests</h2>
+
 <div class="grid">
+
 <div class="card">💻 Coding</div>
 <div class="card">🎮 Gaming</div>
 <div class="card">📸 Photography</div>
 <div class="card">🎥 Video Editing</div>
 <div class="card">🎨 Drawing</div>
 <div class="card">💻 Web Development</div>
+
 </div>
+
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
+
 <h2 class="section-title">Contact Me</h2>
 
 <div class="contact">
+
 <a href="https://wa.me/919168392740" target="_blank">📱 WhatsApp</a>
+
 <a href="https://www.instagram.com/_.sreejit._7" target="_blank">📸 Instagram</a>
+
 <a href="https://www.linkedin.com/in/sreeejit-mandal-691a623a9" target="_blank">💼 LinkedIn</a>
+
 </div>
 
 <form action="/contact" method="POST">
+
 <input type="text" name="name" placeholder="Your Name" required>
+
 <input type="email" name="email" placeholder="Your Email" required>
+
 <textarea name="message" placeholder="Your Message" required></textarea>
+
 <button type="submit">Send Message</button>
+
 </form>
 
 </section>
 
 <!-- CERTIFICATE MODAL -->
 <div id="certModal" class="cert-modal">
-<span class="close-modal">&times;</span>
-<img class="modal-content" id="modalImg">
+
+<span class="close-modal" onclick="closeCert()">&times;</span>
+
+<img class="modal-content" id="modalImg" alt="Certificate Preview">
+
 </div>
 
 <script src="script.js"></script>
