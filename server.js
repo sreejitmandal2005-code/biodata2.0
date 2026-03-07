@@ -4,72 +4,69 @@ const path = require("path");
 const nodemailer = require("nodemailer");
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+const GMAIL_USER = process.env.GMAIL_USER || "";
+const GMAIL_APP_PASSWORD = process.env.GMAIL_APP_PASSWORD || "";
 
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(__dirname));
 
-// Gmail Transport Setup
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "index.html"));
+});
+
 const transporter = nodemailer.createTransport({
     service: "gmail",
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 10000,
     auth: {
-        user: "sreejitmandal2005@gmail.com",       // 🔥 YOUR GMAIL
-        pass: "emoo advm xccp ixtz"
+        user: GMAIL_USER,
+        pass: GMAIL_APP_PASSWORD
     }
 });
 
-app.post("/contact", (req, res) => {
+app.post("/contact", async (req, res) => {
     const { name, email, message } = req.body;
 
+    if (!name || !email || !message) {
+        return res.status(400).send("Please fill all fields.");
+    }
+
+    if (!GMAIL_USER || !GMAIL_APP_PASSWORD) {
+        return res.status(500).send("Mail service is not configured on server.");
+    }
+
     const mailOptions = {
-        from: email,
-        to: "sreejitmandal2005@gmail.com",  // 🔥 Where you want to receive messages
+        from: GMAIL_USER,
+        replyTo: email,
+        to: GMAIL_USER,
         subject: `New Message from ${name}`,
-        text: `
-        Name: ${name}
-        Email: ${email}
-        Message: ${message}
-        `
+        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.log(error);
-            res.send("Error sending message ❌");
-        } else {
-            console.log("Email sent: " + info.response);
-            res.send("<h2>Message Sent Successfully 🚀</h2><a href='/'>Go Back</a>");
-        }
-    });
+    try {
+        const info = await transporter.sendMail(mailOptions);
+        console.log("Email sent:", info.response);
+        res.send("<h2>Message sent successfully.</h2><a href='/'>Go Back</a>");
+    } catch (error) {
+        console.error("Mail send failed:", error.message);
+        res.status(500).send("Error sending message. Check Gmail app password/config.");
+    }
 });
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
+
+    if (GMAIL_USER && GMAIL_APP_PASSWORD) {
+        transporter.verify((error) => {
+            if (error) {
+                console.error("Gmail transport verification failed:", error.message);
+            } else {
+                console.log("Gmail transport is ready.");
+            }
+        });
+    } else {
+        console.warn("Gmail transport disabled: set GMAIL_USER and GMAIL_APP_PASSWORD.");
+    }
 });
-
-function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("active");
-}
-
-
-// CERTIFICATE FULL SCREEN
-function openCert(img){
-const modal = document.getElementById("certModal");
-const modalImg = document.getElementById("modalImg");
-
-modal.style.display = "block";
-modalImg.src = img.src;
-}
-
-document.querySelector(".close-modal").onclick = function(){
-document.getElementById("certModal").style.display="none";
-}
-
-// CLOSE WHEN CLICK OUTSIDE
-window.onclick = function(event){
-const modal = document.getElementById("certModal");
-if(event.target == modal){
-modal.style.display="none";
-}
-}
-
