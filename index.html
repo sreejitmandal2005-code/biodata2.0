@@ -7,7 +7,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-<!-- LINK CSS FILE -->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,18 +14,18 @@
 <canvas id="particles"></canvas>
 
 <nav class="navbar">
-    <h1 class="logo">Sreejit.07</h1>
+<h1 class="logo">Sreejit.07</h1>
 
-    <div class="menu-btn" onclick="toggleMenu()">⋮</div>
+<div class="menu-btn" onclick="toggleMenu()">⋮</div>
 
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#certificates">Certificates</a></li>
-        <li><a href="#achievements">Achievements</a></li>
-        <li><a href="#hobbies">Hobbies</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><span class="toggle" onclick="toggleMode()">🌙 Mode</span></li>
-    </ul>
+<ul class="nav-links" id="navLinks">
+<li><a href="#about">About</a></li>
+<li><a href="#certificates">Certificates</a></li>
+<li><a href="#achievements">Achievements</a></li>
+<li><a href="#hobbies">Hobbies</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><span class="toggle" onclick="toggleMode()">🌙 Mode</span></li>
+</ul>
 </nav>
 
 <section class="hero">
@@ -38,22 +37,16 @@
 <section id="about">
 <h2 class="section-title">About Me</h2>
 <div class="card">
-    <p>
-        Hi, I’m <strong>Sreejit Mandal</strong>, a First-Year BCA student at Don Bosco College, Panaji, Goa. 
-        I am passionate about technology, creativity, and digital innovation. 
-        As a web developer, photographer, and editor, I enjoy blending technical skills with artistic vision 
-        to create impactful digital experiences.
-        <br><br>
-        I have a strong interest in modern web development and continuously work on improving my coding skills. 
-        Alongside programming, photography and editing allow me to express creativity and capture stories through visuals.
-        <br><br>
-        My goal is to grow as a full-stack developer while building projects that are innovative, user-friendly, and meaningful.
-    </p>
+<p>
+Hi, I’m <strong>Sreejit Mandal</strong>, a First-Year BCA student at Don Bosco College, Panaji, Goa.
+I am passionate about technology, creativity, and digital innovation.
+</p>
 </div>
 </section>
 
 <section id="certificates">
 <h2 class="section-title">Certificates</h2>
+
 <div class="grid">
 
 <div class="card">
@@ -72,27 +65,27 @@
 </div>
 
 <div class="card">
-<img src="c4.jpeg"  class="cert-img" onclick="openCert(this)">
+<img src="c4.jpeg" class="cert-img" onclick="openCert(this)">
 <p>Introduction to Tally</p>
 </div>
 
 <div class="card">
-<img src="c6.jpeg"  class="cert-img" onclick="openCert(this)">
+<img src="c6.jpeg" class="cert-img" onclick="openCert(this)">
 <p>AI Workshop</p>
 </div>
 
 <div class="card">
-<img src="c2.jpeg"  class="cert-img" onclick="openCert(this)">
+<img src="c2.jpeg" class="cert-img" onclick="openCert(this)">
 <p>Photography Certificate</p>
 </div>
 
 <div class="card">
-<img src="c7.jpeg"  class="cert-img" onclick="openCert(this)">
+<img src="c7.jpeg" class="cert-img" onclick="openCert(this)">
 <p>Goa Photography Competition</p>
 </div>
 
 <div class="card">
-<img src="c8.jpeg"  class="cert-img" onclick="openCert(this)">
+<img src="c8.jpeg" class="cert-img" onclick="openCert(this)">
 <p>Book Cover Design Competition</p>
 </div>
 
@@ -132,62 +125,22 @@
 <a href="https://www.linkedin.com/in/sreeejit-mandal-691a623a9" target="_blank">💼 LinkedIn</a>
 </div>
 
-<form action="https://formsubmit.co/sreejitmandal2005@gmail.com" method="POST">
+<form action="/contact" method="POST">
 <input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Your Email" required>
 <textarea name="message" placeholder="Your Message" required></textarea>
-<input type="hidden" name="_captcha" value="false">
 <button type="submit">Send Message</button>
 </form>
+
 </section>
 
-<script>
-// MENU TOGGLE
-function toggleMenu(){
-document.getElementById("navLinks").classList.toggle("active");
-}
-
-// TYPING EFFECT
-const text=["PHOTOGRAPHY","VIDEOGRAPHY","VIDEO-EDITOR","PHOTO-EDITOR","PROGRAMMER"];
-let i=0,j=0;
-function type(){
-if(i<text.length){
-document.getElementById("typing").innerHTML=text[i].slice(0,j++);
-if(j>text[i].length){i++;j=0;}
-setTimeout(type,200);
-}}
-type();
-
-// PARTICLES
-const canvas=document.getElementById("particles");
-const ctx=canvas.getContext("2d");
-canvas.width=window.innerWidth;
-canvas.height=window.innerHeight;
-
-let particles=[];
-for(let i=0;i<80;i++){
-particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:2});
-}
-
-function draw(){
-ctx.clearRect(0,0,canvas.width,canvas.height);
-ctx.fillStyle="#00ffcc";
-particles.forEach(p=>{
-ctx.beginPath();
-ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-ctx.fill();
-p.y+=0.5;
-if(p.y>canvas.height)p.y=0;
-});
-requestAnimationFrame(draw);
-}
-draw();
-</script>
-
-<!-- CERTIFICATE FULL SCREEN MODAL -->
+<!-- CERTIFICATE MODAL -->
 <div id="certModal" class="cert-modal">
-    <span class="close-modal">&times;</span>
-    <img class="modal-content" id="modalImg">
+<span class="close-modal">&times;</span>
+<img class="modal-content" id="modalImg">
 </div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
