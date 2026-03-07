@@ -6,7 +6,25 @@ document.getElementById("navLinks").classList.toggle("active");
 // DARK MODE
 function toggleMode(){
 document.body.classList.toggle("light");
+const isLight=document.body.classList.contains("light");
+localStorage.setItem("theme",isLight?"light":"dark");
+updateThemeToggleText(isLight);
 }
+
+function updateThemeToggleText(isLight){
+const toggle=document.getElementById("themeToggle");
+if(!toggle) return;
+toggle.textContent=isLight?"Dark Mode":"Light Mode";
+}
+
+(function initTheme(){
+const savedTheme=localStorage.getItem("theme");
+const isLight=savedTheme==="light";
+if(isLight){
+document.body.classList.add("light");
+}
+updateThemeToggleText(isLight);
+})();
 
 // TYPING
 const text=["PHOTOGRAPHY","VIDEOGRAPHY","VIDEO-EDITOR","PHOTO-EDITOR","PROGRAMMER"];
