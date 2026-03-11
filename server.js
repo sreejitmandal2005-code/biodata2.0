@@ -7,24 +7,14 @@ const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
-<<<<<<< HEAD
-app.use(bodyParser.json());
-
-=======
->>>>>>> ca5ae60 (saving changes)
 app.use(express.static(path.join(__dirname, "public")));
 
 // Gmail Transport Setup
 const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-<<<<<<< HEAD
-        user: "sreejitmandal2005@gmail.com", // YOUR GMAIL
-        pass: "iwrg wuuo elfa igbe" // Should be App Password
-=======
         user: "sreejitmandal2005@gmail.com",       // 🔥 YOUR GMAIL
         pass: "emoo advm xccp ixtz"
->>>>>>> ca5ae60 (saving changes)
     }
 });
 
@@ -33,30 +23,6 @@ app.post("/contact", (req, res) => {
 
     const mailOptions = {
         from: email,
-<<<<<<< HEAD
-        to: "sreejitmandal2005@gmail.com",
-        subject: `New Contact Message from ${name}`,
-        text: `
-Name: ${name}
-Email: ${email}
-
-Message:
-${message}
-`
-    };
-
-    try {
-        await transporter.sendMail(mailOptions);
-
-        res.send(`
-        <h2>Message Sent Successfully 🚀</h2>
-        <a href="/">Go Back</a>
-        `);
-    } catch (error) {
-        console.log(error);
-        res.send("Error sending message ❌");
-    }
-=======
         to: "sreejitmandal2005@gmail.com",  // 🔥 Where you want to receive messages
         subject: `New Message from ${name}`,
         text: `
@@ -75,14 +41,11 @@ ${message}
             res.send("<h2>Message Sent Successfully 🚀</h2><a href='/'>Go Back</a>");
         }
     });
->>>>>>> ca5ae60 (saving changes)
 });
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
 });
-<<<<<<< HEAD
-=======
 
 function toggleMenu(){
     document.getElementById("navLinks").classList.toggle("active");
@@ -110,4 +73,3 @@ modal.style.display="none";
 }
 }
 
->>>>>>> ca5ae60 (saving changes)
