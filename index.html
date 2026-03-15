@@ -190,34 +190,18 @@ My goal is to grow as a full-stack developer while building projects that are in
 
 </div>
 
-<title>Contact Me</title>
-<link rel="stylesheet" href="style.css">
+<form action="/contact" method="POST">
 
-</head>
+<input type="text" name="name" placeholder="Your Name" required>
 
-<body>
+<input type="email" name="email" placeholder="Your Email" required>
 
-<div class="contact-container">
-
-<h1>Contact Me</h1>
-
-<form id="contactForm">
-
-<input type="text" id="name" placeholder="Your Name" required>
-
-<input type="email" id="email" placeholder="Your Email" required>
-
-<textarea id="message" placeholder="Your Message" required></textarea>
+<textarea name="message" placeholder="Your Message" required></textarea>
 
 <button type="submit">Send Message</button>
 
 </form>
 
-<p id="status"></p>
-
-</div>
-
-<script src="script.js"></script>
 </section>
 
 <!-- CERTIFICATE MODAL -->
